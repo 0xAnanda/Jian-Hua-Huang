@@ -3,6 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+*::selection {
+  background-color: black;
+  color: yellow;
+}
 header {
   background-color: #d5d1d1;
   width: 100%;
@@ -65,15 +69,6 @@ main.ul li {
   font-weight: bold;
   text-align: center;
 }
-div h4 {
-  font-weight: bold;
-  font-size: 20px;
-  background-color: rgb(204, 195, 195);
-  color: #666644;
-  padding: 15px;
-  text-align: left;
-  text-align: center;
-}
 .subject {
   display: block;
   text-shadow: 1px 1px 0px #888888;
@@ -104,15 +99,7 @@ div {
   justify-content: left;
   white-space: nowrap; /*不換行*/
 }
-.steps {
-  display: block;
-  flex: none;
-  line-height: 35px;
-  width: 10%;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-right: 15%;
-}
+
 .steps {
   display: block;
   flex: none;
