@@ -168,3 +168,8 @@ div {
 hr {
   size: 10rem;
 }
+
+div :active {
+  color: darkblue;
+  font-size: 1.25rem;
+}
