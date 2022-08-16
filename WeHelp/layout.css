@@ -173,3 +173,7 @@ div :active {
   color: darkblue;
   font-size: 1.25rem;
 }
+p::first-letter {
+  font-size: 2rem;
+  color: rgb(47, 79, 34);
+}
