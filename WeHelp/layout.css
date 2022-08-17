@@ -99,7 +99,7 @@ div {
 }
 .step {
   width: 95%;
-  margin: 0px auto;
+  margin: 0px 2%;
   display: flex;
   justify-content: left;
   white-space: nowrap; /*不換行*/
@@ -109,7 +109,7 @@ div {
   display: block;
   flex: none;
   line-height: 35px;
-  width: 12%;
+  width: 11%;
   font-weight: bold;
   font-size: 1.2em;
   margin-right: 10%;
