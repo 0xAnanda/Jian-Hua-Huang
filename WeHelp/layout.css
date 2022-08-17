@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+/* 選取後藍底白字變成黑底黃字 */
 *::selection {
   background-color: black;
   color: yellow;
@@ -11,10 +12,14 @@ header {
   background-color: #d5d1d1;
   width: 100%;
   padding: 1rem;
+  font-weight: 600;
 }
 nav {
   background-color: #38383c;
   max-width: 100%;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 nav ul {
   display: flex;
@@ -155,11 +160,12 @@ div {
 hr {
   size: 10rem;
 }
-
+/* 點選變色 */
 div :active {
   color: darkblue;
   font-size: 1.25rem;
 }
+/* 第一個字放大 */
 p::first-letter {
   font-size: 2rem;
   color: rgb(47, 79, 34);
