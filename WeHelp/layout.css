@@ -13,6 +13,10 @@ header {
   width: 100%;
   padding: 1rem;
   font-weight: 600;
+  transition: background-color 1s;
+}
+header:hover {
+  background-color: darksalmon;
 }
 nav {
   background-color: #38383c;
