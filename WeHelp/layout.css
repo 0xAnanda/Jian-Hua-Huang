@@ -13,7 +13,7 @@ header {
   width: 100%;
   padding: 1rem;
   font-weight: 600;
-  transition: background-color 1.6s;
+  transition: background-color 1s ease-in;
 }
 header:hover {
   background-color: darksalmon;
@@ -83,8 +83,8 @@ main.ul li {
   text-shadow: 1px 1px 0px #888888;
   font-size: 1.4em;
   font-weight: bold;
-  margin-left: 30px;
-  margin-bottom: 2rem;
+  padding-left: 30px;
+  padding-bottom: 2rem;
   padding-top: 2rem;
   text-shadow: 0.1em 0.1em 0.2em yellow;
 }
@@ -92,15 +92,18 @@ div p {
   margin-left: 20px;
   font-size: 1.2em;
 }
+
 .view {
   max-width: 100%;
   margin: auto;
   text-align: left;
 }
+
 div {
   background-color: rgb(204, 195, 195);
   font-family: "微軟正黑體";
 }
+
 .step {
   width: 95%;
   margin: 0px 2%;
@@ -173,4 +176,14 @@ div :active {
 p::first-letter {
   font-size: 2rem;
   color: rgb(47, 79, 34);
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.showFlex {
+  display: flex;
 }

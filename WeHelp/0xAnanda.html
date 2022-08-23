@@ -78,14 +78,14 @@
     </main>
     <main></main>
     <div>
-      <div class="subject">一、兩百字的個人簡介</div>
-      <p class="description">
+      <div onclick="showOne();" class="subject">一、兩百字的個人簡介</div>
+      <p  id="one" class="description hide" >
         您好：<br />
         我叫 黃建樺，我畢業於陸軍專科學校，畢業後至今已累計10年工作經驗，擅長整合規劃。<br />
         在軍中主導單位維保規劃、在公司將客戶資料統整有效率的方式進行維保。<br />
         去年利用所長，整合資源、人力，打造了500人團隊進行P2E遊戲裡三贏的成果。<br />
         而我的工作經驗培養出我的 3 大優勢能力：<br />
-            <div class="description">
+            <div id="oneOne" class="description hide">
                 <ul >
                     <li class="text">第一，整合能力，透過資源的整合，滿足客戶需求並制定策略。</li>
                     <li class="text">第二，溝通能力，一手主導與50個資方及20 個管理者合作，打造500人的大團隊，從中制定規範及管理。</li>
@@ -99,8 +99,8 @@
     </div>
     <main></main>
     <div class="view">
-      <div class="subject">二、為了成為軟體工程師，曾做過什麼努力?</div>
-      <div class="step">
+      <div onclick="showTwo();" class="subject">二、為了成為軟體工程師，曾做過什麼努力?</div>
+      <div id="two" class="step hide">
         <div class="steps">
           <div class="title">決 定</div>
           <div class="description">
@@ -113,7 +113,7 @@
         <div class="step1">
           <div class="steps">
             <div class="title">課 程</div>
-            <div class="description">
+            <div id=twoTwo class="description hide">
               <li>Udemy：Wilson-Python入門學習</li>
               <li>Udemy：Wilson-網頁開發(剛開始)</li>
               <li>Youtube：Py嬸異想世界</li>
@@ -122,7 +122,7 @@
             </div>
           </div>
         </div>
-        <div class="step1">
+        <div id="twoThree" class="step1 hide">
           <div class="steps">
             <div class="title">.</div>
             <div class="description">
@@ -136,24 +136,24 @@
     </div>
     <main></main>
     <div class="view">
-    <div class="subject">三、如果參與個計劃，會怎麼安排學習時間?</div>
-    <p class="description">
+    <div  onclick="showThree();" class="subject">三、如果參與個計劃，會怎麼安排學習時間?</div>
+    <p id="three" class="description hide">
       目前對自己還是很沒有自信，除了因為過了年紀記憶力也大不如前以外，還有以前所學的完全沒有幫助。<br/>
       不過我相信參與個計劃之後，只要依照老師的課程的規劃完成該有的進度，就能一步一步往目標邁進！
     </p>
     </div>
     <main></main>
     <div class="view">
-    <div class="subject">四、是否有想過加入的軟體公司?為什麼想加入該公司?</div>
-    <p class="description">
+    <div onclick="showFour();" class="subject">四、是否有想過加入的軟體公司?為什麼想加入該公司?</div>
+    <p id="four" class="description hide">
       原來是想過華人最大虛擬貨幣交易所:幣安。他們的安全性和界面都很棒，我也一路用他們的平台一段時間。<br/>
       後來我覺得工作環境更重要；開放、明亮、自在的空間如Google，讓思路時常保持清晰。</p>
     </div>
     
     <main></main>
     <div class="view">
-    <div class="subject">五、你曾經碰到最困難的事情，如何克服?</div>
-    <p class="description">
+    <div  onclick="showFive();" class="subject">五、你曾經碰到最困難的事情，如何克服?</div>
+    <p id="five" class="description hide">
         最近的話，因為我是完全零基礎加入的，所以在學習上甚至找老師上都很不知所措。<br/>
         剛開始買了幾本書，發現自己完全看不懂、即使書名表示看了就會、即使書裡面一步步帶領讀怎麼寫，也感到無力。。。<br/>
         後來在網路上找課程，最先跳出的都是巨匠，不過報價是真的讓人退縮。<br/>
@@ -167,8 +167,8 @@
     </div>
     <main></main>
     <div class="view">
-    <div class="subject">六、關於這份申請網頁，請分享一個你開發時的心得。</div>
-    <p class="description">
+    <div  onclick="showSix();" class="subject">六、關於這份申請網頁，請分享一個你開發時的心得。</div>
+    <p id="six" class="description hide">
       因為需要製作這個網頁，我開始看HTML和CSS的課程，然後跟著做，雖然做到最後隔天再回頭看，有時候不知道自己怎麼做出來的，甚至一些格式都不敢改，怕改廢了。。<br/>
       但是過程中不斷地去調整格式然後格式又跑掉，不斷地修改再立即看成品，感覺真的有成就感。<br/>
       而且發現在這方面的真的不足，於是就去報名老師在台大資訊教的網頁前端工程入門，希望之後在計畫前能先將基礎紮穩紮滿！！
@@ -176,18 +176,70 @@
     </div>
     <main></main>
     <div class="view">
-    <div class="subject">七、其他想對我們說的事情?</div>
-    <p class="description">
+    <div onclick="showSeven();"class="subject">七、其他想對我們說的事情?</div>
+    <p id="seven" class="description hide">
         先謝謝彭彭老師給予佛心低價甚至一堆免費的課程在網路上教學並回答問題造福非常多人，謝謝！<br/>
         期待未來透過老師系統式的帶領，按部就班的完成作業並轉職成功。<br/>
         另外有個問題想請教老師:在開始之前，我們可以先做什麼功課或準備呢?
     </p>
     </div>
     <main >
-      <marquee>人生第一個網頁~感謝這個機會。祝福一切！</marquee>
+      <marquee id="marquee" onclick="hideAll();" >人生第一個網頁~感謝這個機會。祝福一切！</marquee>
 
     </main>
     
 <hr/> 
+
+<script>
+  let one=document.querySelector("#one");
+  let oneOne=document.querySelector("#oneOne");
+  let two=document.querySelector("#two");
+  let twoTwo=document.querySelector("#twoTwo");
+  let twoThree=document.querySelector("#twoThree");
+  let three=document.querySelector("#three");
+  let four=document.querySelector("#four");
+  let five=document.querySelector("#five");
+  let six=document.querySelector("#six");
+  let seven=document.querySelector("#seven");
+  let marquee=document.querySelector("#marquee");
+  function showOne(){
+    one.className="description show";
+    oneOne.className="description show"
+  }
+  function showTwo(){
+    two.className="step showFlex";
+    twoTwo.className="description show";
+    twoThree.className="step1 show";
+  }
+  function showThree(){
+    three.className="description show";
+  }
+  function showFour(){
+    four.className="description show";
+  }
+  function showFive(){
+    five.className="description show";
+  }
+  function showSix(){
+    six.className="description show";
+  }
+  function showSeven(){
+    seven.className="description show";
+  }
+  function hideAll(){
+    one.className="hide";
+    oneOne.className=" hide";
+    two.className="hide";
+    twoTwo.className="hide";
+    twoThree.className="hide";
+    three.className="hide";
+    four.className="hide";
+    five.className="hide";
+    six.className="hide";
+    seven.className="hide";
+
+  }
+
+</script>
   </body>
 </html>
