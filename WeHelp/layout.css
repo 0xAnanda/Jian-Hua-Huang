@@ -17,6 +17,7 @@ header {
 }
 header:hover {
   background-color: darksalmon;
+  color: aliceblue;
 }
 nav {
   background-color: #38383c;
@@ -87,6 +88,11 @@ main.ul li {
   padding-bottom: 2rem;
   padding-top: 2rem;
   text-shadow: 0.1em 0.1em 0.2em yellow;
+  transition: all 0.3s ease-in;
+}
+.subject:hover {
+  background-color: darksalmon;
+  color: aliceblue;
 }
 div p {
   margin-left: 20px;
