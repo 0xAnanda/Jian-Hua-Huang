@@ -193,3 +193,7 @@ p::first-letter {
 .showFlex {
   display: flex;
 }
+
+.lefts:hover {
+  transform: scale(1.2, 1.2);
+}
