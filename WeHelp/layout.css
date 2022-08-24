@@ -2,11 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "myFont";
 }
 /* 選取後藍底白字變成黑底黃字 */
 *::selection {
   background-color: black;
   color: yellow;
+}
+@font-face {
+  font-family: "myFont";
+  src: url(./清松手寫體1.ttf);
 }
 header {
   background-color: #d5d1d1;
@@ -63,7 +68,6 @@ main {
   padding: 5px;
   background: linear-gradient(gray, #383838);
   color: orange;
-  font-family: "微軟正黑體";
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -110,7 +114,6 @@ div p {
 
 div {
   background-color: rgb(204, 195, 195);
-  font-family: "微軟正黑體";
 }
 
 .step {
@@ -134,7 +137,7 @@ div {
 
 .steps1 {
   display: block;
-  flex: none;
+  flex-wrap: wrap;
   line-height: 35px;
   width: 15%;
   max-width: 80%;
