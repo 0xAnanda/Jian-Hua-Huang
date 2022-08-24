@@ -28,6 +28,7 @@ nav {
 }
 nav ul {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   padding-left: 1rem;
   font-family: "Noto Sans TC", sans-serif;
@@ -35,6 +36,7 @@ nav ul {
 }
 nav ul li {
   display: flex;
+  flex-wrap: wrap;
 }
 nav ul li a {
   color: white;
@@ -56,6 +58,7 @@ nav ul li :hover {
 main {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   margin: 0rem;
   padding: 5px;
   background: linear-gradient(gray, #383838);
@@ -114,6 +117,7 @@ div {
   width: 95%;
   margin: 0px 2%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: left;
   white-space: nowrap; /*不換行*/
 }
@@ -200,6 +204,6 @@ p::first-letter {
 
 @media screen and (max-width: 950px) {
   nav li {
-    display: contents;
+    flex-direction: column;
   }
 }
