@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "myFont";
+}
+@font-face {
+  font-family: myFont;
+  src: url(./清松手寫體1.ttf);
+}
+i {
+  pointer-events: none;
+}
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(161, 242, 36, 0.7903536414565826) 0%,
+    rgba(0, 212, 255, 1) 88%
+  );
+}
+header {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    text-align: center;
+  }
+}
+form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  input,
+  button {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.2rem;
+    margin: 0.3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    opacity: 0.9;
+  }
+
+  input[type="number"] {
+    width: 50px;
+    text-align: center;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: rgb(32, 191, 80);
+    color: white;
+    border-radius: 1.5rem;
+    margin-left: 1.2rem;
+  }
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.todo {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    margin: 0.2rem 0rem;
+    transition: all 0.15s;
+    p {
+      background-color: white;
+      color: black;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.2rem;
+      border-radius: 1rem;
+      font-weight: bold;
+    }
+
+    p.todo-text {
+      width: 50%;
+    }
+    p.todo-time {
+      width: 20%;
+      text-align: center;
+    }
+
+    button {
+      padding: 0.25rem 0.5rem;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      color: white;
+      margin: 0.35rem;
+      border-radius: 2rem;
+    }
+    button.trash {
+      background-color: red;
+    }
+    button.finished {
+      background-color: rgb(31, 196, 31);
+    }
+  }
+}
+
+div.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+  button {
+    cursor: pointer;
+    background-color: rgb(42, 214, 223);
+    padding: 0.25rem 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    color: black;
+    border-radius: 2rem;
+    font-weight: bold;
+  }
+}
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+}
+
+//新增時的動畫效果
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  to {
+    transform: scale(0);
+  }
+}
