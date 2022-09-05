@@ -36,6 +36,7 @@ form {
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-wrap: wrap;
 
   input,
   button {
@@ -154,5 +155,10 @@ div.sort {
 @keyframes scaleDown {
   to {
     transform: scale(0);
+  }
+}
+@media screen and (max-width: 1250px) {
+  section div.todo {
+    width: 60vw;
   }
 }
