@@ -54,7 +54,7 @@ main section {
 main section div.promotion {
   text-align: left;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 main section div.promotion div.box {
   width: 49%;
@@ -94,15 +94,16 @@ main section div.pictures div.pictureTitle div.picture img {
   main section {
     width: 95%;
   }
-  main section div.promotion div.box {
-    margin: 1rem 0.6rem;
-  }
   main section div.promotion div.box img {
     width: 80px;
     height: 50px;
   }
+  main section div.pictures {
+    justify-content: space-around;
+  }
   main section div.pictures div.pictureTitle {
-    width: 46%;
+    width: 46.5%;
+    margin: 0rem;
   }
 }
 @media screen and (max-width: 600px) {
