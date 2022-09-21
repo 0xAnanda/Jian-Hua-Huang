@@ -59,7 +59,7 @@ main section div.promotion {
 main section div.promotion div.box {
   width: 49%;
   background-color: rgb(138, 170, 194);
-  margin: 1rem 0.6rem;
+  margin: 1rem 0.5rem;
   height: 50px;
   padding-bottom: 2rem;
 }
@@ -94,6 +94,9 @@ main section div.pictures div.pictureTitle div.picture img {
   main section {
     width: 95%;
   }
+  main section div.promotion div.box {
+    margin: 1rem 0.9rem;
+  }
   main section div.promotion div.box img {
     width: 80px;
     height: 50px;
@@ -104,6 +107,11 @@ main section div.pictures div.pictureTitle div.picture img {
   main section div.pictures div.pictureTitle {
     width: 46.5%;
     margin: 0rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  main section div.promotion div.box {
+    margin: 1rem 0.6rem;
   }
 }
 @media screen and (max-width: 600px) {
@@ -137,14 +145,22 @@ main section div.pictures div.pictureTitle div.picture img {
   }
   main section div.promotion {
     flex-direction: column;
+    justify-content: space-around;
   }
   main section div.promotion div.box {
     width: 95%;
+    margin: 0.5rem;
   }
   main section div.pictures {
     width: 100%;
   }
   main section div.pictures div.pictureTitle {
     width: 95%;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  div.welcome {
+    background-color: #d32a2a;
   }
 }/*# sourceMappingURL=style.css.map */

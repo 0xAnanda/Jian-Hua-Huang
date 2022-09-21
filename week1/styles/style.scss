@@ -62,7 +62,7 @@ main {
       div.box {
         width: 49%;
         background-color: rgb(138, 170, 194);
-        margin: 1rem 0.6rem;
+        margin: 1rem 0.5rem;
         height: 50px;
         padding-bottom: 2rem;
 
@@ -108,6 +108,8 @@ main {
 
       div.promotion {
         div.box {
+          margin: 1rem 0.9rem;
+
           img {
             width: 80px;
             height: 50px;
@@ -119,6 +121,17 @@ main {
         div.pictureTitle {
           width: 46.5%;
           margin: 0rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  main {
+    section {
+      div.promotion {
+        div.box {
+          margin: 1rem 0.6rem;
         }
       }
     }
@@ -156,8 +169,10 @@ main {
     section {
       div.promotion {
         flex-direction: column;
+        justify-content: space-around;
         div.box {
           width: 95%;
+          margin: 0.5rem;
         }
       }
       div.pictures {
@@ -165,8 +180,14 @@ main {
 
         div.pictureTitle {
           width: 95%;
+          margin-bottom: 1rem;
         }
       }
     }
+  }
+}
+@media screen and (max-width: 360px) {
+  div.welcome {
+    background-color: #d32a2a;
   }
 }
