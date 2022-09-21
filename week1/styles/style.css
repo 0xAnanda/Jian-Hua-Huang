@@ -88,6 +88,9 @@ main section div.pictures div.pictureTitle div.picture img {
 }
 
 @media screen and (max-width: 1200px) {
+  div.welcome {
+    background-color: #ffc107;
+  }
   main section {
     width: 95%;
   }
@@ -100,9 +103,6 @@ main section div.pictures div.pictureTitle div.picture img {
   }
   main section div.pictures div.pictureTitle {
     width: 46%;
-  }
-  div.welcome {
-    background-color: #ffc107;
   }
 }
 @media screen and (max-width: 600px) {
@@ -124,25 +124,26 @@ main section div.pictures div.pictureTitle div.picture img {
   header div.mobile-menu:hover {
     cursor: pointer;
   }
+  div.welcome {
+    background-color: #28a745;
+    font-size: 30px;
+  }
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 0px;
   }
   main section div.promotion {
     flex-direction: column;
   }
   main section div.promotion div.box {
-    width: 90%;
-  }
-  main section div.pictures {
     width: 95%;
   }
-  main section div.pictures div.pictureTitle {
+  main section div.pictures {
     width: 100%;
   }
-}
-div.welcome {
-  background-color: #28a745;
-  font-size: 30px;
+  main section div.pictures div.pictureTitle {
+    width: 95%;
+  }
 }/*# sourceMappingURL=style.css.map */

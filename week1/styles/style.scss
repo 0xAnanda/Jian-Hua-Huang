@@ -99,6 +99,9 @@ main {
 }
 
 @media screen and (max-width: 1200px) {
+  div.welcome {
+    background-color: #ffc107;
+  }
   main {
     section {
       width: 95%;
@@ -118,9 +121,6 @@ main {
         }
       }
     }
-  }
-  div.welcome {
-    background-color: #ffc107;
   }
 }
 @media screen and (max-width: 600px) {
@@ -142,27 +142,30 @@ main {
       cursor: pointer;
     }
   }
+  div.welcome {
+    background-color: #28a745;
+    font-size: 30px;
+  }
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 0px;
+
     section {
       div.promotion {
         flex-direction: column;
         div.box {
-          width: 90%;
+          width: 95%;
         }
       }
       div.pictures {
-        width: 95%;
+        width: 100%;
+
         div.pictureTitle {
-          width: 100%;
+          width: 95%;
         }
       }
     }
   }
-}
-div.welcome {
-  background-color: #28a745;
-  font-size: 30px;
 }
