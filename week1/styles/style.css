@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+header {
+  display: flex;
+}
+header div {
+  padding: 0.5rem 1rem;
+}
+header div.mobile-menu {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+}
+header nav {
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-basis: 400;
+}
+header nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: end;
+}
+header nav ul li {
+  padding: 0.5rem 1rem;
+  justify-items: space-around;
+  cursor: pointer;
+}
+
+div.welcome {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #12a2b8;
+  font-size: 40px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main section {
+  width: 1200px;
+}
+main section div.promotion {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+main section div.promotion div.box {
+  width: 49%;
+  background-color: rgb(138, 170, 194);
+  margin: 1rem 0.6rem;
+  height: 50px;
+  padding-bottom: 2rem;
+}
+main section div.promotion div.box img {
+  width: 80px;
+  height: 50px;
+  vertical-align: middle;
+}
+main section div.pictures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main section div.pictures div.pictureTitle {
+  width: 23%;
+  margin: 0.5rem;
+}
+main section div.pictures div.pictureTitle div.picture {
+  background-color: rgb(138, 170, 194);
+  text-align: center;
+  line-height: 2.5rem;
+}
+main section div.pictures div.pictureTitle div.picture img {
+  vertical-align: bottom;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  main section {
+    width: 95%;
+  }
+  main section div.promotion div.box {
+    margin: 1rem 0.6rem;
+  }
+  main section div.promotion div.box img {
+    width: 80px;
+    height: 50px;
+  }
+  main section div.pictures div.pictureTitle {
+    width: 46%;
+  }
+  div.welcome {
+    background-color: #ffc107;
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    justify-content: space-between;
+  }
+  header div.title {
+    align-items: center;
+  }
+  header nav {
+    display: none;
+  }
+  header div.mobile-menu {
+    display: inline-block;
+    justify-content: end;
+    padding: 10px;
+    align-items: center;
+  }
+  header div.mobile-menu:hover {
+    cursor: pointer;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main section div.promotion {
+    flex-direction: column;
+  }
+  main section div.promotion div.box {
+    width: 90%;
+  }
+  main section div.pictures {
+    width: 95%;
+  }
+  main section div.pictures div.pictureTitle {
+    width: 100%;
+  }
+}
+div.welcome {
+  background-color: #28a745;
+  font-size: 30px;
+}/*# sourceMappingURL=style.css.map */
