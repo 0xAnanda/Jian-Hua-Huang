@@ -106,7 +106,7 @@ main section div.pictures div.pictureTitle div.picture img {
   }
   main section div.pictures div.pictureTitle {
     width: 46.5%;
-    margin: 0rem;
+    margin: 1rem 0rem;
   }
 }
 @media screen and (max-width: 900px) {
