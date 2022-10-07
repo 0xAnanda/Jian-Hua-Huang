@@ -4,11 +4,18 @@ const url =
 let titles = [];
 let pictures = [];
 
-async function getData(titles, pictures) {
-  let data = await fetch(url);
-  let parseData = await data.json();
-  //console.log(parseData);
-  let results = parseData["result"]["results"];
+async function getData() {
+  try {
+    let data = await fetch(url);
+    let parseData = await data.json();
+    //console.log(parseData);
+    return parseData.result.results;
+  } catch (err) {
+    console.log("fetch failed:err");
+  }
+}
+const main = async () => {
+  results = await getData();
 
   for (let place of results) {
     // 判斷時間
@@ -65,35 +72,6 @@ async function getData(titles, pictures) {
   }
   btn.addEventListener("mouseover", mouseOver);
   btn.addEventListener("mouseout", mouseOut);
+};
 
-  return titles, pictures;
-}
-
-getData(titles, pictures);
-
-let imgs = pictures;
-let names = titles;
-async function loadMore() {
-  let photos = document.querySelector(".pictures");
-  let pictureTitle = document.createElement("div");
-  let photo = document.createElement("div");
-  let name = document.createElement("div");
-  let img = document.createElement("img");
-  photo.className = "picture";
-  name.className = "name";
-  let pictureTitles = document.querySelectorAll("pictureTitle");
-
-  for (let i = 11; i < 19; i++) {
-    photos.appendChild(pictureTitle);
-    pictureTitles[i].appendChild(photo);
-    photo.appendChild(img);
-    img.setAttribute("src", imgs[i]);
-    pictureTitles[i].appendChild(name);
-    name.textContent = names[i];
-    name.className = "name";
-  }
-}
-// async function loadMore(titles, pictures) {
-//   console.log(pictures);
-//   console.log(titles);
-// }
+main();
