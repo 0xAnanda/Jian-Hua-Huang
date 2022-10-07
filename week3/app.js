@@ -75,3 +75,28 @@ const main = async () => {
 };
 
 main();
+
+let currentItems = 10;
+async function loadMore() {
+  results = await getData();
+  const btn = document.querySelector("#btn");
+
+  if (currentItems < pictures.length) {
+    for (let i = currentItems; i < currentItems + 8; i++) {
+      const pictureTitles = [...document.querySelectorAll(".pictureTitle")];
+      let photo = document.createElement("div");
+      photo.className = "picture";
+      let name = document.createElement("div");
+      let img = document.createElement("img");
+      pictureTitles[i - 2].appendChild(photo);
+      photo.appendChild(img);
+      img.setAttribute("src", pictures[i]);
+      pictureTitles[i - 2].appendChild(name);
+      name.textContent = titles[i];
+      name.className = "name";
+    }
+  } else {
+    btn.style.display = "none";
+  }
+  currentItems += 8;
+}
