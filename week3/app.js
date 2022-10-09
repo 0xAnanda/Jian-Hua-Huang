@@ -97,6 +97,7 @@ async function loadMore() {
     }
   } else {
     btn.style.display = "none";
+    alert("已經到底了！！");
   }
   currentItems += 8;
 }
