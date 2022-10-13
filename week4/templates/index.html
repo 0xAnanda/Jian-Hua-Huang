@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',    filename='styles/style.css') }}"
+    />
+    <title>week-4</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="welcome">歡迎光臨，請輸入帳號密碼</h1>
+    </header>
+    <main>
+      <div>登入系統</div>
+      <form action="/signin" method="POST">
+        <label for="name">姓 名：</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="請輸入姓名"
+          minlength="2"
+          maxlength="10"
+        />
+        <br /><br />
+        <label for="account">帳 號：</label>
+        <input
+          type="text"
+          name="account"
+          placeholder="請輸入帳號"
+          value="test"
+          minlength="0"
+          maxlength="8"
+        />
+        <br /><br />
+        <label for="password">密 碼：</label>
+        <input
+          type="password"
+          name="password"
+          minlength="0"
+          maxlength="8"
+          placeholder="請輸入密碼"
+        />
+        <br /><br />
+        <label for="email">信 箱： </label>
+        <input id="email" type="email" name="email" />
+        <br /><br />
+        <label for="gender">性 別：</label>
+        <!--這是select and option例子-->
+        <select name="gender" id="gender">
+          <option></option>
+          <option value="male">男性</option>
+          <option value="female">女性</option>
+          <option value="other">其他</option>
+        </select>
+        <br /><br />
+
+        <label for="age">年 齡： </label>
+        <input
+          id="age"
+          type="number"
+          name="age"
+          value="18"
+          min="0"
+          max="100"
+        /><br /><br />
+        <button class="submit">登入</button>
+      </form>
+    </main>
+    <hr />
+    <section>
+      <div class="square">計算正整數的平方</div>
+
+      <form action="/" method="POST">
+        <label for="square">正整數</label>
+        <input type="text" name="number" id="square" />
+        <br/ >
+        <button>計算</button>
+      </form>
+    </section>
+  </body>
+</html>

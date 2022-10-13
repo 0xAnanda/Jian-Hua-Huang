@@ -1,0 +1,135 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "myFont";
+  text-align: center;
+}
+
+@font-face {
+  font-family: "myFont";
+  src: url(./清松手寫體1.ttf);
+}
+header {
+  background-color: #212529;
+  margin-bottom: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  transition: all 0.5s;
+  opacity: 0.6;
+}
+@-webkit-keyframes welcome {
+  0%, 100% {
+    text-shadow: 0 0 20px #fff, 0 0 100px #fff, 0 0 20px #fff;
+  }
+  50% {
+    text-shadow: 0 0 50px #fff, 0 0 150px #fff, 0 0 50px #fff;
+    color: lightblue;
+  }
+}
+@keyframes welcome {
+  0%, 100% {
+    text-shadow: 0 0 20px #fff, 0 0 100px #fff, 0 0 20px #fff;
+  }
+  50% {
+    text-shadow: 0 0 50px #fff, 0 0 150px #fff, 0 0 50px #fff;
+    color: lightblue;
+  }
+}
+header h1.welcome {
+  color: #ffc107;
+  padding: 2rem;
+  letter-spacing: 0.5rem;
+  -webkit-animation: welcome 1.5s ease-in-out infinite alternate;
+          animation: welcome 1.5s ease-in-out infinite alternate;
+}
+
+body div.caculate {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  font-size: 3rem;
+  justify-content: center;
+  margin: 2rem;
+}
+
+main div {
+  margin: 2rem;
+  font-size: 1.5rem;
+}
+main form {
+  text-align: center;
+  font-size: 1.2rem;
+}
+main form label {
+  text-align: center;
+}
+main form input,
+main form select {
+  border-radius: 10%;
+  width: 30%;
+  height: 3rem;
+  font-size: 1.2rem;
+  border-radius: 10%;
+}
+
+div.h4 {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+button.submit {
+  margin: 2rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 20%;
+}
+
+button.submit:hover {
+  cursor: pointer;
+  background-color: #d63384;
+  color: #ffc107;
+}
+
+section div {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+section form {
+  text-align: center;
+  margin: 2rem;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+section form input {
+  border-radius: 10%;
+  width: 25%;
+  height: 3rem;
+  font-size: 1.2rem;
+  border-radius: 10%;
+}
+section form button {
+  margin: 2rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 20%;
+}
+
+footer {
+  margin-top: 13rem;
+}
+footer form {
+  justify-content: center;
+  text-align: center;
+}
+footer form button {
+  font-size: 2.5rem;
+  padding: 2rem;
+  margin: 1rem;
+}/*# sourceMappingURL=style.css.map */

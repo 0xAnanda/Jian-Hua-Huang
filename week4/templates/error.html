@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',    filename='styles/style.css') }}"
+    />
+    <title>FailPage</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="welcome">失敗頁面</h1>
+    </header>
+    <main name="message">
+      <h2>{{message}}</h2>
+      <br />
+      <a href="/">回首頁</a>
+    </main>
+  </body>
+</html>
