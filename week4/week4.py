@@ -24,25 +24,31 @@ def index():
 @app.route("/signin", methods= ['POST', 'GET'])
 def signin():
     if request.method == 'POST':
-        session['account'] = request.form['account']
-        session['password'] = request.form['password']
+        account = request.form['account']
+        password = request.form['password']
         session['name'] = request.form['name']
-        if session['account'] == "test" and session['password'] == "test":
-            return redirect('/member')
+        if account == "test" and password == "test":
+            session['account'] = account
+            session['password'] = password
+            session.permanent =True  # 長期有效，一個月的時間有效
+
+            if session['account'] == "test" and session['password'] == "test":
+                return redirect('/member')
         else:
-            if session['account'] == "" or session['password'] == "":
+            if account == "" or password == "" :
                 message= "還沒輸入帳號 or 密碼。。"
             else:
                 message= "帳號 or 密碼打錯哦"
-                
+            
             return redirect(url_for("error", message= message))
 
 
 
 @app.route("/member")
 def member():
-    name = session['name']
-    if session['account'] == "test":
+
+    if session['account'] == "test" and session['password'] == "test":
+        name = session['name']
         return render_template("member.html",name=name)
     else:
         return redirect(url_for('index'))
@@ -63,8 +69,10 @@ def error():
 @app.route('/logout')
 def logout():
     # remove the username from the session if it's there
-    session.clear
-    # app.secret_key = os.urandom(11)
+    session.clear()   #清除所有session內容
+    # app.secret_key = os.urandom(11) 同上
+    # session['account'] = False
+    # session['password'] = False
     #flash('You were logged out')
     # print(session.get('username'))
     return redirect (url_for('index'))
