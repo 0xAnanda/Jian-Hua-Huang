@@ -26,11 +26,13 @@
 - 使⽤ SELECT 指令取得所有在 member 資料表中的會員資料。
 
   `SELECT * FROM member;`
+
   ![desc](./members.png)
 
 - 使⽤ SELECT 指令取得所有在 member 資料表中的會員資料，並按照 time 欄位，由近到遠排序。
 
   `SELECT * FROM member ORDER BY time;`
+
   ![desc](./time.png)
 
 - 使⽤ SELECT 指令取得 member 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，
@@ -42,6 +44,7 @@
 * 使⽤ SELECT 指令取得欄位 username 是 test 的會員資料。
 
   `SELECT username FROM username = 'test';`
+
   ![desc](./userTest.png)
 
 * 使⽤ SELECT 指令取得欄位 username 是 test、且欄位 password 也是 test 的資料。
@@ -60,16 +63,19 @@
 
 - 取得 member 資料表中，總共有幾筆資料 ( 幾位會員 )。
   `SELECT COUNT(*) FROM member ;`
+
   ![desc](./count.png)
 
 - 取得 member 資料表中，所有會員 follower_count 欄位的總和。
 
   `SELECT SUM(follower_count) FROM member; `
+
   ![desc](./sum.png)
 
 - 取得 member 資料表中，所有會員 follower_count 欄位的平均數。
 
   `SELECT AVG(follower_count) FROM member;`
+
   ![desc](./avg.png)
 
   ![desc](./end.png)
