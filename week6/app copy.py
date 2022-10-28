@@ -7,13 +7,17 @@ dbconfig= {
     "user": "root"
 }
 connection = mysql.connector.connect(
-
+                        # database='weHelp',
+                        # host='localhost',
+                        # port='3306',
+                        # user='root',
                         password=MySQLpassword(),
                         pool_name = "mypool",       #
                         pool_size = 3,              #
                         **dbconfig                  #
                         )
 print("成功連線MySQL")
+# cursor = connection.cursor()
 #===============================================================================
 
 # 載入Flask 所有相關的工具
@@ -74,10 +78,12 @@ def signUp():
     if not data == None:
         # print("{}帳號已存在".format(sql_email))
         return redirect("/error?msg=信箱已經被註冊")
+    cursor.close()
 
     # 把資料放進資料庫，完成註冊
     sql_insert= "INSERT INTO members(name, email, password)" " VALUES (%s, %s, %s)"                # ('"+name+"', '"+email+"', '"+password+"') 
     datas= [name, email, password]
+    cursor = connection.cursor(buffered=True)
     cursor.execute(sql_insert, datas)
     connection.commit()
     print("{}已註冊成功".format(name))
@@ -90,6 +96,15 @@ def signin():
     # 從前端取得使用者輸入
     email= request.form["email"]
     password= request.form["password"]
+       
+    # 和資料庫做互動
+    # 先確定有沒有帳號
+    # sql_email= "SELECT email FROM members WHERE email = %s "       # '"+ email +"' 
+    # cursor= connection.cursor(buffered=True)
+    # cursor.execute(sql_email, [email])
+    # confirmEmail= cursor.fetchone()
+    # if confirmEmail == None:
+    #     return redirect("/error?msg=帳號不存在")
 
     # 搜尋帳號密碼是否in DB
     account= "SELECT name, email , password FROM members WHERE  email = %s AND password= %s "           # '"+ email +"' AND password= '"+ password +"' "
@@ -97,10 +112,14 @@ def signin():
     cursor = connection.cursor(buffered=True)
     cursor.execute(account, datas)
     result= cursor.fetchone()
-
+    print(result)
+    if email != result[1]:
+        return redirect("/error?msg=帳號不存在")
     if result == None:
         return redirect("/error?msg=帳號不存在 or 帳號、密碼輸入錯誤")
-
+    # 找不到相應的資料，登入失敗，導向到錯誤頁面
+    # if result == None:
+    #     return redirect("/error?msg=帳號或密碼輸入錯誤")
     # 登入成功， 在Session 紀錄會員資訊，導向到會員頁面
     session['name']= result[0]
     session['email']= result[1]
@@ -128,6 +147,7 @@ def message():
     content= request.form["content"]
     insert_message= " INSERT INTO messages (members_id, content) VALUES(%s, %s) "          # ('"+ name + "' , '"+ content + "') "
     datas= [member_id, content]
+    # cursor = connection.cursor()
     cursor.execute(insert_message, datas)
     connection.commit()
     cursor.close()
