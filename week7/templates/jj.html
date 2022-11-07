@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="member" method="POST">
+      <input
+        id="username"
+        type="text"
+        name="username"
+        placeholder="輸入查詢的會員帳號"
+        required
+      />
+      <button id="searchButton" type="button" onclick="searchName();">
+        查詢
+      </button>
+    </form>
+    <script>
+      async function searchName() {
+        username = document.querySelector("#username").value;
+        const url = `/api/member?username=${username}`;
+        let data = await fetch(url);
+        let parseData = await data.json();
+        data.then((response) => {
+          console.log(response);
+        });
+        // }.catch (err) {
+        //   console.log("fetch failed:err");
+        // }
+      }
+      // async function search() {
+      //   result = await getData();
+      //   console.log(result);
+      // p = document.createElement("p");
+      // btn.addEventListener("click", () => {
+      //   searchResult.appendChild(p);
+      //   p.innerHTML = data;
+      // });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+  class myForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { text: "" }; // 初始化 state 紀錄單行輸入框資料
+    }
+    render() {
+      return (
+        <form onSumit={this.handleSubmit.bind(this)}>
+          <input type="text" />
+          <input type="submit" value="查詢" />
+        </form>
+      );
+    }
+    handleSubmit(e) {
+      e.preventDefault();
+      console.log("表單送出");
+    }
+    handkeSekectChange(e) {
+      this.setState({ selected: e.currentTarget.value });
+    }
+  }
+</script>

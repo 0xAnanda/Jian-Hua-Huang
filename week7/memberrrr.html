@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/style.css') }}"
+    />
+    <title>會員頁面</title>
+  </head>
+  <body>
+    <div class="header">歡迎光臨，這是會員頁</div>
+    <h2>你好! {{ name }} 很高興見到你~</h2>
+    <br />
+    <div><a href="/signout">登出</a></div>
+    <br />
+    <h2>查詢會員姓名!!</h2>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      class myForm extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { name: "" }; // 初始化 state 紀錄單行輸入框資料
+        }
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <input
+                type="text"
+                value={this.state.name}
+                onChange={this.handleNameChange.bind(this)}
+              />
+              <input type="submit" value="查詢" />
+            </form>
+          );
+        }
+        handleSubmit(e) {
+          e.preventDefault(); // 可停止瀏覽器預設
+          console.log("表單送出"); // 使用者點擊 Submit 送出表單後 進行處理
+        }
+        handleNameChange(e) {
+          this.setState({ name: e.currentTarget.value });
+        }
+      }
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h2>快來留言吧!!</h2>
+    <form action="message" method="POST">
+      <input type="text" name="content" placeholder="請輸入留言" />
+      <button>送出</button>
+    </form>
+    {% for i in range( length ) %}
+    <div class="content">
+      <p>{{ messages[i][0] }} : {{ messages[i][1] }}</p>
+    </div>
+    {%endfor%}
+  </body>
+</html>
