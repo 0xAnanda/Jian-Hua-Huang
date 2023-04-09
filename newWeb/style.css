@@ -73,7 +73,8 @@ header {
 }
 
 nav {
-  float: right;
+  display: inline-flex;
+  margin-right: -40%;
 }
 
 nav ul {
