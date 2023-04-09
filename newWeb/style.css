@@ -229,6 +229,7 @@ div.filter {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  color: black;
 }
 
 .course-cards {
@@ -245,6 +246,7 @@ div.filter {
 }
 
 .course-card {
+  color: black;
   margin-left: 2rem;
   margin-right: 2rem;
   width: 18%;
