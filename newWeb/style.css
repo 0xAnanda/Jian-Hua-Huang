@@ -41,7 +41,8 @@ header {
   letter-spacing: 0.2px;
   color: #ffffff;
   transition: 0.3s;
-  background-color: #000;
+  background-color: transparent; /* 背景色改為透明 */
+  height: 80px; /* 調整高度 */
 }
 
 .logo-container {
@@ -53,7 +54,9 @@ header {
   left: 0;
   z-index: 100;
   transition: all 0.3s;
+  width: 200px; /* 調整寬度 */
 }
+
 .logo-container img {
   width: 4rem;
   display: block;
@@ -62,6 +65,7 @@ header {
   top: 0;
   left: 0;
 }
+
 .logo-container.small {
   width: 30px;
   height: 30px;
@@ -80,18 +84,35 @@ nav ul {
 nav li {
   display: inline-block;
   margin-right: 20px;
+  position: relative; /* 設置父元素相對定位 */
+}
+
+nav li:before {
+  content: ""; /* 增加一個偽元素 */
+  position: absolute;
+  bottom: -5px; /* 在 li 底部留出 5 個像素的空間 */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f7941d;
+  transform: scaleX(0); /* 初始時不顯示，設置 scaleX(0) */
+  transition: transform 0.3s ease-in-out; /* 使用動畫效果 */
+}
+
+nav li:hover:before {
+  transform: scaleX(1); /* 當滑鼠移入時，將 scaleX 設置為 1 */
 }
 
 nav li:last-child {
   margin-right: 0;
 }
+
 nav ul li a:hover {
   color: #f7941d;
 }
 
 .menu-toggle {
   display: none;
-  /* 在手机屏幕下显示的菜单按钮样式 */
 }
 
 /* Hero Styles */
@@ -203,9 +224,11 @@ nav ul li a:hover {
 
 /* Featured Spaces Styles */
 .featured-spaces {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 4rem 2rem;
   background-color: #f2f2f2;
-  flex-direction: column;
 }
 
 .featured-spaces h2 {
@@ -216,14 +239,14 @@ nav ul li a:hover {
 
 .space-cards {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
 .space-card {
-  width: 18%;
+  width: calc(25% - 1rem);
+  margin-bottom: 2rem;
   border: 1px solid #ddd;
   border-radius: 5px;
   overflow: hidden;
@@ -257,6 +280,22 @@ nav ul li a:hover {
   background-color: #f7941d;
   color: #fff;
   border: none;
+}
+.space-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 992px) {
+  .space-card {
+    width: calc(33.33% - 1rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .space-card {
+    width: calc(50% - 1rem);
+  }
 }
 .course-card:hover,
 .space-card:hover {
@@ -328,7 +367,77 @@ footer {
     font-size: 0.8rem;
     border-radius: 5px 5px 0 0;
   }
+
+  /* Navigation Styles */
+  header nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: none;
+    background-color: #333;
+  }
+
+  header.active nav {
+    display: block;
+  }
+
+  nav ul {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  nav li {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  nav li:last-child {
+    margin-bottom: 2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s;
+  }
+
+  .menu-toggle .bar:first-child {
+    transform-origin: left center;
+  }
+
+  .menu-toggle .bar:last-child {
+    transform-origin: right center;
+  }
+
+  .menu-toggle.active .bar:first-child {
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle.active .bar:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
 }
+
+/* Scroll To Top Button Styles */
 #scrollToTopBtn {
   display: none;
   position: fixed;
@@ -348,4 +457,23 @@ footer {
 #scrollToTopBtn:hover {
   transform: scale(1.1);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Add to Cart Button Styles */
+.add-to-cart-button {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #f7941d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-to-cart-button:hover {
+  background-color: #333;
+  color: #fff;
 }
