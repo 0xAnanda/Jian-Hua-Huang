@@ -12,9 +12,7 @@
 
   <body>
     <header>
-      <div class="logo-container">
-        <img src="./picture/tree.png" alt="靈性探索者" />
-      </div>
+      <div class="logo-container"></div>
       <nav>
         <ul>
           <li><a href="#">尋找場地</a></li>
@@ -28,7 +26,7 @@
     <section class="hero">
       <div class="hero-text">
         <h1>探索靈性，照亮內在之光</h1>
-        <p>尋找靈性場地，學習靈性課程，聯繫靈性導師</p>
+        <p>靈性空間租借，學習靈性課程，導師上課資訊</p>
         <form>
           <input type="text" placeholder="搜尋場地、課程或老師" />
           <button type="submit">搜尋</button>
@@ -103,7 +101,7 @@
     <footer>
       <div class="footer-content">
         <div class="logo-container">
-          <img src="images/logo.png" alt="靈性探索者" />
+          <img src="./picture/tree.png" alt="靈性探索者" />
         </div>
         <nav>
           <ul>
@@ -119,5 +117,18 @@
         </div>
       </div>
     </footer>
+    <script>
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        var logoContainer = document.querySelector(".logo-container");
+        if (window.scrollY > 0) {
+          header.classList.add("small");
+          logoContainer.classList.add("small");
+        } else {
+          header.classList.remove("small");
+          logoContainer.classList.remove("small");
+        }
+      });
+    </script>
   </body>
 </html>
