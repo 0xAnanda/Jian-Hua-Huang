@@ -15,10 +15,10 @@
       <div class="logo-container"></div>
       <nav>
         <ul>
-          <li><a href="#">尋找場地</a></li>
-          <li><a href="#">尋找課程</a></li>
-          <li><a href="#">尋找老師</a></li>
-          <li><a href="#">會員</a></li>
+          <li class="active"><a href="#">尋找場地</a></li>
+          <li class="active"><a href="#">尋找課程</a></li>
+          <li class="active"><a href="#">尋找老師</a></li>
+          <li class="active"><a href="#">會員</a></li>
         </ul>
       </nav>
     </header>
@@ -105,7 +105,7 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#">關於我們</a></li>
+            <li class="active"><a href="#">關於我們</a></li>
             <li><a href="#">常見問題</a></li>
             <li><a href="#">聯繫我們</a></li>
           </ul>
@@ -116,19 +116,10 @@
           <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
+      <button id="scrollToTopBtn" title="回到頂部">
+        <i class="fas fa-arrow-up">Top</i>
+      </button>
     </footer>
-    <script>
-      window.addEventListener("scroll", function () {
-        var header = document.querySelector("header");
-        var logoContainer = document.querySelector(".logo-container");
-        if (window.scrollY > 0) {
-          header.classList.add("small");
-          logoContainer.classList.add("small");
-        } else {
-          header.classList.remove("small");
-          logoContainer.classList.remove("small");
-        }
-      });
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>

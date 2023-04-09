@@ -12,7 +12,7 @@ body {
   line-height: 1.5;
   color: #333;
   background-color: black;
-  max-width: 1200;
+  max-width: 1200px;
 }
 
 a {
@@ -47,6 +47,7 @@ header {
 .logo-container {
   background-color: rgba(0, 0, 0, 0.8); /* 80%不透明的黑色背景 */
   padding: 0.5rem;
+  height: 4rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -57,6 +58,9 @@ header {
   width: 4rem;
   display: block;
   margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .logo-container.small {
   width: 30px;
@@ -80,6 +84,9 @@ nav li {
 
 nav li:last-child {
   margin-right: 0;
+}
+nav ul li a:hover {
+  color: #f7941d;
 }
 
 .menu-toggle {
@@ -251,6 +258,15 @@ nav li:last-child {
   color: #fff;
   border: none;
 }
+.course-card:hover,
+.space-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+header,
+.logo-container {
+  transition: all 0.3s;
+}
 
 /* Footer Styles */
 footer {
@@ -274,6 +290,9 @@ footer {
   color: #fff;
   font-size: 1.5rem;
 }
+.social-icons a:hover {
+  transform: scale(1.2);
+}
 
 @media (max-width: 768px) {
   /* Header Styles */
@@ -288,7 +307,7 @@ footer {
     margin-right: 1rem;
   }
   nav a {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   /* Hero Styles */
   .hero-text h1 {
@@ -309,4 +328,24 @@ footer {
     font-size: 0.8rem;
     border-radius: 5px 5px 0 0;
   }
+}
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 1.5rem;
+  background-color: #f7941d;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#scrollToTopBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
