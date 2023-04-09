@@ -62,3 +62,6 @@ dropdown.forEach((item) => {
     menu.classList.toggle("show");
   });
 });
+
+var audio = new Audio("your_music_file.mp3");
+audio.play();

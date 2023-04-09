@@ -39,7 +39,7 @@ header {
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.2px;
-  background-color: black;
+  background-color: #919c1a;
   color: #ffffff;
   transition: 0.3s;
   height: 4rem;
@@ -204,7 +204,7 @@ nav li:hover .dropdown-menu {
 .featured-courses {
   flex-direction: column;
   padding: 4rem 2rem;
-  background-color: #f2f2f2;
+  background-color: rgb(230, 219, 55);
 }
 
 .featured-courses h2 {
@@ -237,6 +237,7 @@ nav li:hover .dropdown-menu {
 
 .course-details {
   padding: 1rem;
+  color: black;
 }
 
 .course-details h3 {
