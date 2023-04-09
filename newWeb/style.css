@@ -30,7 +30,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.2rem;
+  padding: 1.5rem;
   transition: all 0.3s;
   z-index: 99;
   display: inline-block;
@@ -39,14 +39,14 @@ header {
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.2px;
+  background-color: black;
   color: #ffffff;
   transition: 0.3s;
-  background-color: transparent; /* 背景色改為透明 */
-  height: 80px; /* 調整高度 */
+  height: 4rem;
 }
 
 .logo-container {
-  background-color: rgba(0, 0, 0, 0.8); /* 80%不透明的黑色背景 */
+  background-color: black;
   padding: 0.5rem;
   height: 4rem;
   position: fixed;
@@ -54,7 +54,7 @@ header {
   left: 0;
   z-index: 100;
   transition: all 0.3s;
-  width: 200px; /* 調整寬度 */
+  width: 10rem;
 }
 
 .logo-container img {
@@ -78,37 +78,64 @@ nav {
 
 nav ul {
   list-style: none;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 nav li {
-  display: inline-block;
   margin-right: 20px;
-  position: relative; /* 設置父元素相對定位 */
+  position: relative;
 }
 
-nav li:before {
-  content: ""; /* 增加一個偽元素 */
+nav li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  transition: all 0.3s;
+}
+
+nav li:hover > ul {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
   position: absolute;
-  bottom: -5px; /* 在 li 底部留出 5 個像素的空間 */
+  top: 100%;
   left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #f7941d;
-  transform: scaleX(0); /* 初始時不顯示，設置 scaleX(0) */
-  transition: transform 0.3s ease-in-out; /* 使用動畫效果 */
+  width: 200px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav li:hover:before {
-  transform: scaleX(1); /* 當滑鼠移入時，將 scaleX 設置為 1 */
+.dropdown-menu li {
+  margin-bottom: 10px;
 }
 
-nav li:last-child {
-  margin-right: 0;
+.dropdown-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  transition: all 0.3s;
 }
 
-nav ul li a:hover {
+.dropdown-menu li a:hover {
   color: #f7941d;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+nav li:hover .dropdown-menu {
+  display: block;
+  flex-direction: column;
 }
 
 .menu-toggle {
@@ -296,6 +323,21 @@ nav ul li a:hover {
   .space-card {
     width: calc(50% - 1rem);
   }
+  .course-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .space-cards {
+    width: 100%;
+  }
+  footer {
+    padding: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .course-card:hover,
 .space-card:hover {
@@ -379,7 +421,7 @@ footer {
     background-color: #333;
   }
 
-  header.active nav {
+  header.menu-item nav {
     display: block;
   }
 
@@ -424,15 +466,15 @@ footer {
     transform-origin: right center;
   }
 
-  .menu-toggle.active .bar:first-child {
+  .menu-toggle.menu-item .bar:first-child {
     transform: rotate(45deg);
   }
 
-  .menu-toggle.active .bar:last-child {
+  .menu-toggle.menu-item .bar:last-child {
     transform: rotate(-45deg);
   }
 
-  .menu-toggle.active .bar:nth-child(2) {
+  .menu-toggle.menu-item .bar:nth-child(2) {
     opacity: 0;
   }
 }

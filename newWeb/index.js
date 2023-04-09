@@ -48,3 +48,17 @@ function addToCart(name, type) {
   // 將商品名稱和類型加入購物車
   console.log(`Added ${name} (${type}) to cart.`);
 }
+
+//用者點擊"會員"時，下拉式選單就會顯示出"登入"和"註冊"選項。當使用者再次點擊"會員"或選擇其中一個選項時，下拉式選單就會隱藏。
+
+const dropdown = document.querySelectorAll(".dropdown");
+
+dropdown.forEach((item) => {
+  const link = item.querySelector("a");
+  const menu = item.querySelector(".dropdown-menu");
+
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    menu.classList.toggle("show");
+  });
+});
