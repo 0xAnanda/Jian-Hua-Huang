@@ -33,23 +33,19 @@ header {
   padding: 1.2rem;
   transition: all 0.3s;
   z-index: 99;
-
   display: inline-block;
   text-align: center;
-  margin: 12px;
+  margin: auto;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.2px;
   color: #ffffff;
   transition: 0.3s;
-}
-
-header.small {
-  padding: 0.5rem;
+  background-color: #000;
 }
 
 .logo-container {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8); /* 80%不透明的黑色背景 */
   padding: 0.5rem;
   position: fixed;
   top: 0;
