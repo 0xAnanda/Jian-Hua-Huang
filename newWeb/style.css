@@ -12,7 +12,7 @@ body {
   line-height: 1.5;
   color: #333;
   background-color: black;
-  max-width: 1200px;
+  max-width: 100%;
 }
 
 a {
@@ -73,8 +73,7 @@ header {
 }
 
 nav {
-  display: inline-flex;
-  margin-right: -40%;
+  float: right;
 }
 
 nav ul {
@@ -99,14 +98,18 @@ nav li a {
 
 nav li:hover > ul {
   display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-right: 0;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 200px;
+  left: -2000px;
+  width: 8rem;
   background-color: #333;
   padding: 10px;
   border-radius: 5px;
