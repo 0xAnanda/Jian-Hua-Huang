@@ -26,35 +26,69 @@ ul {
 
 /* Header Styles */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2rem;
+  transition: all 0.3s;
+  z-index: 99;
+
+  display: inline-block;
+  text-align: center;
+  margin: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+header.small {
+  padding: 0.5rem;
 }
 
 .logo-container {
-  width: 2rem; /* 使用 rem 單位來調整大小 */
-  height: 2rem; /* 如果圖片比例不正確，可以加上 height 來避免圖片被壓扁或拉長 */
   background-color: #000;
   padding: 0.5rem;
-  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.3s;
+}
+.logo-container img {
+  width: 4rem;
+  display: block;
+  margin: auto;
+}
+.logo-container.small {
+  width: 30px;
+  height: 30px;
+  padding: 0.2rem;
+}
+
+nav {
+  float: right;
 }
 
 nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  list-style: none;
+  display: inline-block;
 }
 
 nav li {
-  margin-right: 1.5rem;
+  display: inline-block;
+  margin-right: 20px;
 }
 
-nav a {
-  font-weight: 700;
-  text-transform: uppercase;
+nav li:last-child {
+  margin-right: 0;
+}
+
+.menu-toggle {
+  display: none;
+  /* 在手机屏幕下显示的菜单按钮样式 */
 }
 
 /* Hero Styles */
@@ -71,6 +105,8 @@ nav a {
 .hero-text {
   text-align: center;
   color: #fff;
+  font-size: 3.5rem;
+  line-height: 1.2;
 }
 
 .hero-text h1 {
@@ -108,7 +144,7 @@ nav a {
 .featured-courses {
   flex-direction: column;
   padding: 4rem 2rem;
-  background-color: black;
+  background-color: #f2f2f2;
 }
 
 .featured-courses h2 {
@@ -165,7 +201,7 @@ nav a {
 /* Featured Spaces Styles */
 .featured-spaces {
   padding: 4rem 2rem;
-  background-color: black;
+  background-color: #f2f2f2;
   flex-direction: column;
 }
 
@@ -251,6 +287,7 @@ footer {
   .logo-container {
     width: 30px;
   }
+
   nav li {
     margin-right: 1rem;
   }
