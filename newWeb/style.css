@@ -46,7 +46,6 @@ header {
 }
 
 .logo-container {
-  background-color: black;
   padding: 0.5rem;
   height: 4rem;
   position: fixed;
@@ -54,7 +53,7 @@ header {
   left: 0;
   z-index: 100;
   transition: all 0.3s;
-  width: 10rem;
+  width: 30vh;
 }
 
 .logo-container img {
@@ -66,14 +65,9 @@ header {
   left: 0;
 }
 
-.logo-container.small {
-  width: 30px;
-  height: 30px;
-  padding: 0.2rem;
-}
-
 nav {
   float: right;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -86,17 +80,32 @@ nav li {
   margin-right: 20px;
   position: relative;
 }
+nav li:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f7941d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+nav li:hover:before {
+  transform: scaleX(1);
+}
 
 nav li a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.8rem;
   font-weight: 300;
   letter-spacing: 0.2px;
   transition: all 0.3s;
 }
 
-nav li:hover > ul {
+nav li > a:focus ~ .dropdown-menu {
   display: block;
   position: absolute;
   left: 0;
@@ -109,11 +118,11 @@ nav li:hover > ul {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 200px;
+  width: 10rem;
   background-color: #333;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-menu li {
@@ -123,7 +132,7 @@ nav li:hover > ul {
 .dropdown-menu li a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1.8rem;
   font-weight: 300;
   letter-spacing: 0.2px;
   transition: all 0.3s;
@@ -137,7 +146,7 @@ nav li:hover > ul {
   display: none;
 }
 
-nav li:hover .dropdown-menu {
+.dropdown-menu:focus {
   left: -5rem;
   display: block;
   flex-direction: column;
@@ -153,13 +162,21 @@ nav li:hover .dropdown-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  min-height: 70vh;
   background-image: url("./picture/安卡圖.jpg");
   background-size: cover;
   background-position: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   background-color: rgba(250, 250, 250, 0.1);
-  z-index: 5;
+  z-index: 0;
+}
+div.filter {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  min-height: 63.5vh;
+  position: absolute;
+  top: 4rem;
+  z-index: 1;
 }
 
 .hero-text {
@@ -167,6 +184,7 @@ nav li:hover .dropdown-menu {
   color: #fff;
   font-size: 3.5rem;
   line-height: 1.2;
+  z-index: 8;
 }
 
 .hero-text h1 {
@@ -219,9 +237,16 @@ nav li:hover .dropdown-menu {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .course-card {
+  margin-left: 2rem;
+  margin-right: 2rem;
   width: 18%;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -322,16 +347,25 @@ nav li:hover .dropdown-menu {
   transform: translateY(-5px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-
-@media screen and (max-width: 992px) {
-  .space-card {
-    width: calc(33.33% - 1rem);
+@media screen and (max-width: 380px) {
+  header div h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .logo-container {
+    margin-left: 0.5rem;
+  }
+  .logo-container img {
+    width: 15vw;
+    height: 15vw;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .space-card {
-    width: calc(50% - 1rem);
+  .course-card {
+    width: 50vw;
+    height: 50vw;
   }
   .course-cards {
     flex-direction: column;
@@ -428,7 +462,6 @@ footer {
     width: 100%;
     height: calc(100vh - 70px);
     display: none;
-    background-color: #333;
   }
 
   header.menu-item nav {
@@ -523,6 +556,9 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+.add-to-cart-button img {
+  width: 1rem;
 }
 
 .add-to-cart-button:hover {
